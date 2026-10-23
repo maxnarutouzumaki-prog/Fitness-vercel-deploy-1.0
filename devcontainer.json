@@ -1,0 +1,8 @@
+{
+  "name": "Fitness App",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "postCreateCommand": "npm install",
+  "forwardPorts": [5173],
+  "portsAttributes": { "5173": { "label": "App", "onAutoForward": "openBrowser" } },
+  "customizations": { "codespaces": { "openFiles": ["README.md"] } }
+}

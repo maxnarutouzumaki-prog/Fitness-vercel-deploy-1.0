@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="green" data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Seu assistente pessoal de fitness: treinos, alimentação e evolução." />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Fitness" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <title>Fitness</title>
+
+    <!-- Aplica tema e modo noite antes do primeiro quadro, para não piscar. -->
+    <script>
+      try {
+        var saved = JSON.parse(localStorage.getItem('fit:appearance') || 'null');
+        var themes = ['green', 'blue', 'pink', 'red', 'orange'];
+        var root = document.documentElement;
+        if (saved && themes.indexOf(saved.theme) > -1) root.setAttribute('data-theme', saved.theme);
+        if (saved && saved.mode === 'dark') root.setAttribute('data-mode', 'dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Este aplicativo precisa de JavaScript para funcionar.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

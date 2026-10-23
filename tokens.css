@@ -1,0 +1,124 @@
+/*
+ * TOKENS DE DESIGN — única fonte dos códigos de cor do app.
+ * Trocar de tema ou ativar o modo noite = mudar data-theme / data-mode no <html>.
+ */
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-card: 24px;
+  --radius-control: 14px;
+  --radius-pill: 999px;
+
+  --tabbar-h: 64px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Neutros — modo claro */
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #f4f5f7;
+  --text: #0f172a;
+  --text-secondary: #6b7280;
+  --border: #e7e9ee;
+  --card-border: #e7e9ee;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
+  --good: #15803d;
+  --bad: #b91c1c;
+  --on-accent: #ffffff;
+
+  /* Padrão (verde) caso o atributo ainda não exista */
+  --accent: #16a34a;
+  --accent-ink: #15803d;
+  --accent-rgb: 22 163 74;
+}
+
+/* ───── Temas (modo claro) ─────
+   --accent: cor do tema (círculos, bordas, indicadores)
+   --accent-ink: variante mais escura usada em TEXTO sobre branco, para manter o contraste */
+:root[data-theme='green'] {
+  --accent: #16a34a;
+  --accent-ink: #15803d;
+  --accent-rgb: 22 163 74;
+}
+:root[data-theme='blue'] {
+  --accent: #2563eb;
+  --accent-ink: #1d4ed8;
+  --accent-rgb: 37 99 235;
+}
+:root[data-theme='pink'] {
+  --accent: #ec4899;
+  --accent-ink: #be185d;
+  --accent-rgb: 236 72 153;
+}
+:root[data-theme='red'] {
+  --accent: #dc2626;
+  --accent-ink: #b91c1c;
+  --accent-rgb: 220 38 38;
+}
+:root[data-theme='orange'] {
+  --accent: #f97316;
+  --accent-ink: #c2410c;
+  --accent-rgb: 249 115 22;
+}
+
+/* ───── Modo noite (independente do tema) ───── */
+:root[data-mode='dark'] {
+  color-scheme: dark;
+  --bg: #0e0f11;
+  --surface: #1a1c1f;
+  --surface-muted: #25282c;
+  --text: #f5f6f7;
+  --text-secondary: #a3a9b2;
+  --border: #2c3035;
+  --card-border: rgb(var(--accent-rgb) / 0.3);
+  --shadow-card: none;
+  --good: #4ade80;
+  --bad: #f87171;
+  --on-accent: #0e0f11;
+}
+
+/* Cor do tema em tons mais suaves no modo noite */
+:root[data-mode='dark'][data-theme='green'] {
+  --accent: #4ade80;
+  --accent-ink: #4ade80;
+  --accent-rgb: 74 222 128;
+}
+:root[data-mode='dark'][data-theme='blue'] {
+  --accent: #60a5fa;
+  --accent-ink: #60a5fa;
+  --accent-rgb: 96 165 250;
+}
+:root[data-mode='dark'][data-theme='pink'] {
+  --accent: #f472b6;
+  --accent-ink: #f472b6;
+  --accent-rgb: 244 114 182;
+}
+:root[data-mode='dark'][data-theme='red'] {
+  --accent: #f87171;
+  --accent-ink: #f87171;
+  --accent-rgb: 248 113 113;
+}
+:root[data-mode='dark'][data-theme='orange'] {
+  --accent: #fb923c;
+  --accent-ink: #fb923c;
+  --accent-rgb: 251 146 60;
+}
+
+/* Bolinhas de seleção de tema: sempre a cor original, em qualquer modo */
+[data-swatch='green'] {
+  --swatch: #16a34a;
+}
+[data-swatch='blue'] {
+  --swatch: #2563eb;
+}
+[data-swatch='pink'] {
+  --swatch: #ec4899;
+}
+[data-swatch='red'] {
+  --swatch: #dc2626;
+}
+[data-swatch='orange'] {
+  --swatch: #f97316;
+}
